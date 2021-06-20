@@ -25,6 +25,10 @@
   - [根据镜像名称同时删除多个镜像，默认删除的是`latest`标签的镜像](#根据镜像名称同时删除多个镜像默认删除的是latest标签的镜像)
   - [根据`IMAGE ID`或镜像名称同时删除多个镜像](#根据image-id或镜像名称同时删除多个镜像)
   - [指定`Linux`到`Docker`容器的映射端口并运行容器](#指定linux到docker容器的映射端口并运行容器)
+  - [带参数并指定容器名称运行容器](#带参数并指定容器名称运行容器)
+  - [带参数运行容器，并指定容器名称和映射端口](#带参数运行容器并指定容器名称和映射端口)
+  - [使用带标签名称的镜像创建容器，并带参数运行容器，指定容器名称和映射端口](#使用带标签名称的镜像创建容器并带参数运行容器指定容器名称和映射端口)
+  - [进入容器伪终端,并指定容器名称和映射端口](#进入容器伪终端并指定容器名称和映射端口)
 
 # `Docker`常用命令
 
@@ -183,5 +187,29 @@
 
 ```shell
 [qiqi@node01 software]$ sudo docker run -p 80:80 nginx:1.20
+```
+
+## 带参数并指定容器名称运行容器
+
+```shell
+[qiqi@node01 software]$ sudo docker run -it --name qiqi_nginx nginx
+```
+
+## 带参数运行容器，并指定容器名称和映射端口
+
+```shell
+[qiqi@node01 software]$ sudo docker run -it --name qiqi_nginx -p 80:80 nginx
+```
+
+## 使用带标签名称的镜像创建容器，并带参数运行容器，指定容器名称和映射端口
+
+```shell
+[qiqi@node01 software]$ sudo docker run -it --name qiqi_nginx -p 80:80 nginx:1.20
+```
+
+## 进入容器伪终端,并指定容器名称和映射端口
+
+```shell
+[qiqi@node01 software]$ sudo docker run -it --name qiqi_nginx -p 80:80 nginx:1.20 /bin/bash
 ```
 
