@@ -29,6 +29,9 @@
   - [带参数运行容器，并指定容器名称和映射端口](#带参数运行容器并指定容器名称和映射端口)
   - [使用带标签名称的镜像创建容器，并带参数运行容器，指定容器名称和映射端口](#使用带标签名称的镜像创建容器并带参数运行容器指定容器名称和映射端口)
   - [进入容器伪终端,并指定容器名称和映射端口](#进入容器伪终端并指定容器名称和映射端口)
+  - [以守护进程的方式运行容器，并指定容器名称和映射端口](#以守护进程的方式运行容器并指定容器名称和映射端口)
+  - [根据`CONTAINER ID`进入指定容器伪终端](#根据container-id进入指定容器伪终端)
+  - [根据容器名称进入指定容器伪终端](#根据容器名称进入指定容器伪终端)
 
 # `Docker`常用命令
 
@@ -211,5 +214,23 @@
 
 ```shell
 [qiqi@node01 software]$ sudo docker run -it --name qiqi_nginx -p 80:80 nginx:1.20 /bin/bash
+```
+
+## 以守护进程的方式运行容器，并指定容器名称和映射端口
+
+```shell
+[qiqi@node01 software]$ sudo docker run -dit --name qiqi_nginx -p 80:80 nginx
+```
+
+## 根据`CONTAINER ID`进入指定容器伪终端
+
+```shell
+[qiqi@node01 software]$ sudo docker exec -it 54587772a751 /bin/bash
+```
+
+## 根据容器名称进入指定容器伪终端
+
+```shell
+[qiqi@node01 software]$ sudo docker exec -it qiqi_nginx /bin/bash
 ```
 
