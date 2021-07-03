@@ -56,7 +56,7 @@
 ## 根据容器名称查看容器信息
 
 ```shell
-[qiqi@node01 qiqi]$ sudo docker inspect qiqi
+[qiqi@node01 software]$ sudo docker inspect qiqi
 ```
 
 # 注意
